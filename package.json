@@ -8,8 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "next build",
-    "deploy": "next build && next export && touch ./out/.nojekyll && gh-pages -d out -t true"
+    "export": "next export",
+    "predeploy": "next build && next export && touch out/.nojekyll",
+    "deploy": "gh-pages -t true -b master -d out"
   },
   "dependencies": {
     "gh-pages": "^6.2.0",
