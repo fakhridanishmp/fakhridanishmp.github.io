@@ -67,10 +67,10 @@ export default function Home() {
         ></div>
         <div className="flex justify-center flex-col items-center">
           <p className="text-white text-5xl font-bold font-mono">ACHIEVEMENTS</p>
-          <p className="text-white text-md font-bold font-mono mt-4">Here are some of the notable awards and recognitions I’ve received for my projects</p>
+          <p className="text-white text-sm md:text-md font-bold font-mono mt-4 px-8">Here are some of the notable awards and recognitions I’ve received for my projects</p>
         </div>
 
-        <div className="flex flex-col items-start justify-center mt-12 px-32">
+        <div className="flex flex-col items-start justify-center mt-12 px-8 md:px-32">
           <div className="text-white font-mono pb-8 md:pr-4">
             <h3 className="text-xl font-bold">{">"} Inspire - KRPY X Universitas Gajah Mada (3rd Place) | 2024</h3>
             <p className="text-md pt-2">- Organizer: Taman Pintar Yogyakarta & Universitas Gajah Mada (FMIPA, DCSE)</p>
