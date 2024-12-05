@@ -4,6 +4,13 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <div className="min-h-screen bg-neutral-800">
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 opacity-20 z-0"
+        style={{
+          backgroundSize: '50px 50px',
+          backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(180deg, rgba(255,255,255,0.1) 1px, transparent 1px)'
+        }}
+      ></div>
       <Header />
 
       {/* About Section */}
@@ -15,7 +22,14 @@ export default function Home() {
       </div>
 
       {/* Projects Section */}
-      <div id="projects" className="min-h-screen bg-neutral-800">
+      <div id="projects" className="min-h-screen bg-neutral-800 relative z-10">
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 opacity-20 z-0"
+          style={{
+            backgroundSize: '50px 50px',
+            backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(180deg, rgba(255,255,255,0.1) 1px, transparent 1px)'
+          }}
+        ></div>
         <div className="flex justify-center pt-14 flex-col items-center">
           <p className="text-white text-5xl font-bold font-mono pr-4">PROJECTS</p>
           <p className="text-white text-md font-bold font-mono mt-4">Here are some of my projects</p>
@@ -43,7 +57,14 @@ export default function Home() {
       </div>
 
       {/* Achievements Section */}
-      <div id="achievements" className="min-h-screen bg-neutral-800 pt-32 pb-8">
+      <div id="achievements" className="min-h-screen bg-neutral-800 pt-32 pb-8 z-10 relative">
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 opacity-20 z-0"
+          style={{
+            backgroundSize: '50px 50px',
+            backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(180deg, rgba(255,255,255,0.1) 1px, transparent 1px)'
+          }}
+        ></div>
         <div className="flex justify-center flex-col items-center">
           <p className="text-white text-5xl font-bold font-mono">ACHIEVEMENTS</p>
           <p className="text-white text-md font-bold font-mono mt-4">Here are some of the notable awards and recognitions I’ve received for my projects</p>
