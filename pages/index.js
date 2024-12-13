@@ -93,6 +93,41 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+      {/* Reach Me Section */}
+      <div id="reach-me" className="text-white h-[30rem] justify-center flex flex-col pt-8 px-8 font-mono">
+  <div
+    className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 opacity-20 z-0"
+    style={{
+      backgroundSize: '50px 50px',
+      backgroundImage:
+        'linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(180deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+    }}
+  ></div>
+  <div className="flex justify-center flex-col items-center">
+
+          <p className="text-white text-5xl font-bold font-mono">REACH ME</p>
+          <p className="text-white text-sm md:text-md font-bold font-mono mt-4 px-8">Feel free to reach out via email, GitHub, or Instagram!</p>
+        </div>
+
+        {/* Icons container with flexbox to center them */}
+        <div className="flex justify-center items-center space-x-8 mt-8">
+          {/* Email Icon */}
+          <a href="mailto:your.email@example.com" target="_blank" rel="noopener noreferrer" className="text-center">
+            <i className="fas fa-envelope text-white text-3xl hover:text-sky-400 transition duration-300"></i>
+          </a>
+
+          {/* GitHub Icon */}
+          <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" className="text-center">
+            <i className="fab fa-github text-white text-3xl hover:text-sky-400 transition duration-300"></i>
+          </a>
+
+          {/* Instagram Icon */}
+          <a href="https://instagram.com/your-instagram-username" target="_blank" rel="noopener noreferrer" className="text-center">
+            <i className="fab fa-instagram text-white text-3xl hover:text-sky-400 transition duration-300"></i>
+          </a>
+        </div>
+      </div>
+
+    </div >
   );
 }

@@ -37,13 +37,13 @@ export default function Navbar() {
                     </span>
                   </Link>
                 </li>
-                {/* <li className="group">
-                  <Link href="#reachme">
+                <li className="group">
+                  <Link href="#reach-me">
                     <span className="flex py-2 mx-6 text-base transition duration-300 dark:text-white">
                       <span className="text-sky-400 pr-2">04.</span>Reach me
                     </span>
                   </Link>
-                </li> */}
+                </li>
               </ul>
             </nav>
           </div>
