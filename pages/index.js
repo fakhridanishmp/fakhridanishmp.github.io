@@ -20,7 +20,7 @@ export default function Home() {
         <p className="text-lg text-sky-400">Hi, my name is</p>
         <p className="text-5xl font-bold pt-6">Fakhridanish Mirza</p>
         <p className="text-5xl font-bold">Priyoyuwono</p>
-        <p className="text-lg text-left max-w-2xl pt-10">
+        <p className="text-lg/8 text-left max-w-3xl pt-10">
           I’m a student at SMA Negeri 1 Waru with a strong passion for data science and electrical engineering, especially in the development of Internet of Things (IoT) systems. I focus on building impactful, real-world solutions by combining smart technologies, and embedded system.
         </p>
       </div>
