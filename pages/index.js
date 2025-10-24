@@ -203,12 +203,12 @@ export default function Portfolio() {
             </h1>
             <div className="h-1 w-24 bg-gradient-to-r from-[#d41213] to-[#02027f]"></div>
             <p className="text-lg md:text-xl text-gray-700 max-w-3xl leading-relaxed relative group">
-              I’m a student at{" "}
+              I&#39;tm a student at{" "}
               <span className="relative inline-block highlight">
                 SMA Negeri 1 Waru
                 <span className="absolute inset-0 bg-gradient-to-r from-[#d41213]/40 to-[#02027f]/40 scale-x-0 origin-left transition-transform duration-700 ease-in-out"></span>
               </span>{" "}
-              exploring how engineering and data science can create real impact. I’ve built projects such as an{" "}
+              exploring how engineering and data science can create real impact. I&#39;tve built projects such as an{" "}
               <span className="relative inline-block highlight">
                 machine-learning-based non-invasive glucometer
                 <span className="absolute inset-0 bg-gradient-to-r from-[#d41213]/40 to-[#02027f]/40 scale-x-0 origin-left transition-transform duration-700 ease-in-out"></span>
