@@ -269,7 +269,7 @@ export default function Portfolio() {
                     alt={project.title}
                     fill
                     className="object-cover"
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 100vw, 1200px"
                   />
 
                   {/* Gallery Navigation */}
@@ -348,7 +348,7 @@ export default function Portfolio() {
                     alt={achievement.title}
                     fill
                     className="object-cover"
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 100vw, 1200px"
                   />
 
 
