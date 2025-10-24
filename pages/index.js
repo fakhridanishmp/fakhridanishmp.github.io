@@ -269,6 +269,7 @@ export default function Portfolio() {
                     alt={project.title}
                     fill
                     className="object-cover"
+                    quality={70}
                     sizes="(max-width: 768px) 100vw, 1200px"
                   />
 
@@ -347,6 +348,7 @@ export default function Portfolio() {
                     src={achievement.images[achievementGallery[index] || 0]}
                     alt={achievement.title}
                     fill
+                    quality={70}
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 1200px"
                   />
