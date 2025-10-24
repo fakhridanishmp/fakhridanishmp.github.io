@@ -331,7 +331,7 @@ export default function Portfolio() {
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-[#d41213] to-[#02027f] mx-auto mb-4"></div>
             <p className="text-gray-600 text-lg">
-              A few highlights of awards and recognitions I've received along my project journey.
+              A few highlights of awards and recognitions I&#39;tve received along my project journey.
             </p>
           </div>
 
