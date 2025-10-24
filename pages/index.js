@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, Mail, Github, Instagram, Award, Code, Lightbulb, Download, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -262,14 +263,14 @@ export default function Portfolio() {
                 key={index}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col"
               >
-                {/* Image Gallery */}
                 <div className="relative h-64 bg-gray-200 group" style={{ aspectRatio: '16/9' }}>
-                  <img
+                  <Image
                     src={project.images[projectGallery[index] || 0]}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
                   />
-
 
                   {/* Gallery Navigation */}
                   {project.images.length > 1 && (
@@ -342,10 +343,12 @@ export default function Portfolio() {
               >
                 {/* Image Gallery */}
                 <div className="relative bg-gray-200 group aspect-[16/9]">
-                  <img
+                  <Image
                     src={achievement.images[achievementGallery[index] || 0]}
                     alt={achievement.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
                   />
 
 
