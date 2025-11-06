@@ -9,19 +9,31 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "Multi-Analysis Medical Device",
-      description: "A child-friendly medical device that combines non-invasive glucose monitoring with cuffless blood pressure measurement using machine learning algorithms. Designed to improve daily monitoring comfort and accessibility for children.",
-      images: ["/projects/muti-analysis-medical-device.jpg"]
+      "title": "Multi-Analysis Medical Device",
+      "description": [
+        "Developed a child-friendly device integrating non-invasive glucose monitoring and cuffless blood pressure measurement using machine learning algorithms.",
+        "Addresses Indonesia's high prevalence of diabetes and hypertension: WHO 2019 reports 51.3 million Indonesians affected by hypertension (2nd in ASEAN) <i>(<a href='http://www.who.int/news/item/09-09-2019-51-3-million-indonesians-affected-by-hypertension' target='_blank'>WHO 2019</a>)</i>, IDF reports 73.7% of diabetes cases go undiagnosed <i>(<a href='https://idf.org' target='_blank'>IDF</a>)</i>, and Handayani et al., 2019 shows 76.3% of hypertension cases are undiagnosed <i>(<a href='http://dx.doi.org/10.14238/sp20.6.2019.392-400' target='_blank'>Handayani et al., 2019</a>)</i>.",
+        "Aims to improve early detection and management, preventing Intrauterine Growth Restriction (IUGR) and Small for Gestational Age (SGA) outcomes in children, early indicators of stunting."
+      ],
+      "images": ["/projects/muti-analysis-medical-device.jpg"]
     },
     {
-      title: "Non-Invasive Glucometer with Machine Learning",
-      description: "This Non-Invasive Glucometer is a child-friendly blood sugar monitoring device developed to address the growing concern of diabetes among Indonesian children. Utilizing biosignal data such as PPG and advanced machine learning algorithms, it estimates glucose levels without needles—offering a painless, comfortable, and reliable alternative for daily monitoring.",
-      images: ["/projects/project2.png"]
+      "title": "Non-Invasive Glucometer with Machine Learning",
+      "description": [
+        "Created a non-invasive glucometer for children and pregnant women, integrating machine learning for accurate monitoring without needles.",
+        "Addresses fear of needles among children, high undiagnosed diabetes rates, and limited access to pediatric endocrinologists <i>(<a href='https://pbperkeni.or.id/' target='_blank'>PB PERKENI</a>)</i>, <i>(<a href='https://doi.org/10.1186/s12916-025-03990-7' target='_blank'>2025 study</a>)</i>, <i>(<a href='https://doi.org/10.3390/medicina59061139' target='_blank'>2023 study</a>)</i>.",
+        "Monitoring maternal blood pressure and glucose reduces risks of IUGR and SGA, mitigating early stunting, especially in high-risk pregnancy environments."
+      ],
+      "images": ["/projects/project2.png"]
     },
     {
-      title: "RFID-Based Presence System for SMA Negeri 1 Waru",
-      description: "The RFID-Based Presence System is a smart attendance tracking solution developed for SMA Negeri 1 Waru. As a classroom IoT project, it streamlines the recording of student attendance through RFID scanning. It assists both teachers and student leaders (BPH) in managing attendance logs, identifying behavioral trends, and improving classroom discipline with minimal effort.",
-      images: ["/projects/project3.png"]
+      "title": "RFID-Based Presence System for SMA Negeri 1 Waru",
+      "description": [
+        "Smart attendance tracking solution using RFID scanning.",
+        "Streamlines recording of student attendance and assists teachers and student leaders in managing logs.",
+        "Identifies behavioral trends and improves classroom discipline efficiently."
+      ],
+      "images": ["/projects/project3.png"]
     }
   ];
 
@@ -31,23 +43,23 @@ export default function Portfolio() {
       subtitle: "1st Place & Favorite Award | 2025",
       organizer: "Institut Teknologi Sepuluh Nopember (FTEIC, BME)",
       project: "Multi-Analysis Medical Device",
-      description: "A device combining non-invasive glucose monitoring and cuffless blood pressure measurement using machine learning.",
+      description: "Awarded 1st place for developing a child-friendly medical device integrating non-invasive glucose monitoring and cuffless blood pressure measurement with machine learning. The device addresses Indonesia's high prevalence of diabetes and hypertension and targets early detection to prevent IUGR and SGA outcomes <i>(<a href='http://dx.doi.org/10.14238/sp20.6.2019.392-400' target='_blank'>Handayani et al., 2019</a>)</i>, <i>(<a href='http://www.who.int/news/item/09-09-2019-51-3-million-indonesians-affected-by-hypertension' target='_blank'>WHO 2019</a>)</i>, <i>(<a href='https://idf.org' target='_blank'>IDF</a>)</i>.",
       images: ["/photos/1st_champ_2025.jpg"]
     },
     {
       title: "Biomedical Engineering Annual Contest - Bepro",
       subtitle: "2nd Place | 2024",
       organizer: "Institut Teknologi Sepuluh Nopember (FTEIC, BME)",
-      project: "Non-invasive glucometer",
-      description: "Focused on providing a solution for the high number of children with diabetes mellitus, this project features a non-invasive method for blood glucose monitoring that reduces the fear of needles.",
+      project: "Non-Invasive Glucometer with Machine Learning",
+      description: "Recognized for creating a non-invasive glucometer that reduces fear of needles, addresses high undiagnosed diabetes rates, and supports early maternal health interventions to prevent IUGR and SGA outcomes <i>(<a href='https://pbperkeni.or.id/' target='_blank'>PB PERKENI</a>)</i>, <i>(<a href='https://doi.org/10.1186/s12916-025-03990-7' target='_blank'>2025 study</a>)</i>, <i>(<a href='https://doi.org/10.3390/medicina59061139' target='_blank'>2023 study</a>)</i>.",
       images: ["/photos/2nd_champ_2024.jpg"]
     },
     {
       title: "Inspire - KRPY X UGM",
       subtitle: "3rd Place | 2024",
       organizer: "Taman Pintar Yogyakarta & Universitas Gajah Mada",
-      project: "Non-invasive glucometer",
-      description: "This project addresses the growing prevalence of diabetes mellitus in children, with a focus on alleviating needle phobia by developing a non-invasive glucometer for monitoring blood glucose levels.",
+      project: "Non-Invasive Glucometer with Machine Learning",
+      description: "Placed 3rd for designing a system predicting stunting risk in infants by analyzing maternal glucose and blood pressure metrics, facilitating early intervention for high-risk pregnancies <i>(<a href='https://pbperkeni.or.id/' target='_blank'>PB PERKENI</a>)</i>, <i>(<a href='https://doi.org/10.1186/s12916-025-03990-7' target='_blank'>2025 study</a>)</i>.",
       images: ["/projects/project1.png"]
     },
     {
@@ -55,15 +67,15 @@ export default function Portfolio() {
       subtitle: "Favourite Champion | 2025",
       organizer: "Institut Teknologi Sepuluh Nopember (FTEIC, BME)",
       project: "Multi-Analysis Medical Device",
-      description: "Recognized as favourite champion for the multi-analysis medical device combining non-invasive glucose monitoring and cuffless blood pressure measurement.",
+      description: "Recognized as favourite champion for the innovative device combining non-invasive glucose and cuffless blood pressure monitoring, leveraging machine learning to improve pediatric health management <i>(<a href='http://dx.doi.org/10.14238/sp20.6.2019.392-400' target='_blank'>Handayani et al., 2019</a>)</i>, <i>(<a href='https://idf.org' target='_blank'>IDF</a>)</i>.",
       images: ["/photos/fav_champ_2025.jpg"]
     },
     {
       title: "Biomedical Engineering Annual Contest - Bepro",
       subtitle: "Favourite Champion | 2024",
       organizer: "Institut Teknologi Sepuluh Nopember (FTEIC, BME)",
-      project: "Non-invasive glucometer",
-      description: "Aimed at addressing the increasing cases of diabetes in children, this project created a non-invasive glucometer to provide an alternative to painful blood glucose testing, helping children with needle phobia.",
+      project: "Non-Invasive Glucometer with Machine Learning",
+      description: "Acknowledged for a project improving maternal and infant health by monitoring blood pressure and glucose without needles, supporting early detection and intervention to reduce stunting risks <i>(<a href='https://pbperkeni.or.id/' target='_blank'>PB PERKENI</a>)</i>, <i>(<a href='https://doi.org/10.3390/medicina59061139' target='_blank'>2023 study</a>)</i>.",
       images: ["/projects/project2.png"]
     },
     {
@@ -71,7 +83,7 @@ export default function Portfolio() {
       subtitle: "SMA Negeri 1 Waru | 2025",
       organizer: "Actively used by students and teachers",
       project: "RFID-Based Presence System",
-      description: "This system was developed as a practical IoT solution to help automate attendance using RFID technology, making it easier for the BPH and teachers to manage class presence efficiently.",
+      description: "Developed a practical IoT solution to automate attendance using RFID technology, simplifying management of classroom presence.",
       images: ["/projects/project3.png"]
     }
   ];
@@ -107,7 +119,7 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white content-wrapper">
       {/* Header/Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <nav className="container mx-auto px-6 py-4">
@@ -273,7 +285,6 @@ export default function Portfolio() {
                     sizes="(max-width: 768px) 100vw, 1200px"
                   />
 
-                  {/* Gallery Navigation */}
                   {project.images.length > 1 && (
                     <>
                       <button
@@ -291,15 +302,14 @@ export default function Portfolio() {
                         <ChevronRight size={20} />
                       </button>
 
-                      {/* Dots Indicator */}
                       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
                         {project.images.map((_, imgIdx) => (
                           <div
                             key={imgIdx}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${imgIdx === (projectGallery[index] || 0) ? 'w-6' : ''
-                              }`}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${imgIdx === (projectGallery[index] || 0) ? 'w-6' : ''}`}
                             style={{
-                              backgroundColor: imgIdx === (projectGallery[index] || 0) ? '#d41213' : '#ffffff80'
+                              backgroundColor:
+                                imgIdx === (projectGallery[index] || 0) ? '#d41213' : '#ffffff80'
                             }}
                           />
                         ))}
@@ -308,18 +318,26 @@ export default function Portfolio() {
                   )}
                 </div>
 
-                {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold mb-3" style={{ color: '#02027f' }}>
                     {project.title}
                   </h3>
-                  <p className="text-gray-700 text-sm leading-relaxed flex-grow">
-                    {project.description}
-                  </p>
+
+                  {/* Render points */}
+                  <ul className="text-gray-700 text-sm leading-relaxed flex-grow space-y-2">
+                    {project.description.map((point, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="w-2 h-2 mt-2 rounded-full bg-red-600 flex-shrink-0"></span>
+                        <span dangerouslySetInnerHTML={{ __html: point }} />
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
           </div>
+
+
         </div>
       </section>
 
@@ -353,7 +371,6 @@ export default function Portfolio() {
                     sizes="(max-width: 768px) 100vw, 1200px"
                   />
 
-
                   {/* Gallery Navigation */}
                   {achievement.images.length > 1 && (
                     <>
@@ -372,7 +389,6 @@ export default function Portfolio() {
                         <ChevronRight size={20} />
                       </button>
 
-                      {/* Dots Indicator */}
                       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
                         {achievement.images.map((_, imgIdx) => (
                           <div
@@ -405,21 +421,23 @@ export default function Portfolio() {
                     {achievement.subtitle}
                   </p>
 
-                  <div className="space-y-2 text-sm">
+                  <div className="text-sm space-y-2">
                     <p className="text-gray-600">
                       <span className="font-semibold" style={{ color: '#02027f' }}>Organizer:</span> {achievement.organizer}
                     </p>
                     <p className="text-gray-600">
                       <span className="font-semibold" style={{ color: '#02027f' }}>Project:</span> {achievement.project}
                     </p>
-                    <p className="text-gray-700 leading-relaxed mt-3">
-                      {achievement.description}
-                    </p>
+                    <p
+                      className="text-gray-700 leading-relaxed mt-3"
+                      dangerouslySetInnerHTML={{ __html: achievement.description }}
+                    />
                   </div>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
