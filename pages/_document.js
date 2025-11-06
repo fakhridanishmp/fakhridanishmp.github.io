@@ -1,10 +1,10 @@
-import { Html, Head, Main, NextScript, Title } from "next/document";
+import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <Title>Fakhridanish Mirza Priyoyuwono - Student Engineer & IoT Developer</Title>
+        <title>Fakhridanish Mirza Priyoyuwono - Student Engineer & IoT Developer</title>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="description" content="I'm a student at SMA Negeri 1 Waru with a passion for creating IoT-based solutions using data science, electrical engineering, and smart system development." />
         <meta charSet="utf-8" />

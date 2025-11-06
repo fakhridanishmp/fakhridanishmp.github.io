@@ -40,7 +40,7 @@ export default function Portfolio() {
       organizer: "Institut Teknologi Sepuluh Nopember (FTEIC, BME)",
       project: "Non-invasive glucometer",
       description: "Focused on providing a solution for the high number of children with diabetes mellitus, this project features a non-invasive method for blood glucose monitoring that reduces the fear of needles.",
-      images: ["/projects/project2.png"]
+      images: ["/photos/2nd_champ_2024.jpg"]
     },
     {
       title: "Inspire - KRPY X UGM",
