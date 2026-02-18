@@ -7,8 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "primary": "#1e3a8a",
+        "accent-red": "#cc1616",
+        "background-light": "#f6f8f7",
+        "background-dark": "#09090b",
+        "card-dark": "#18181b",
+        "border-dark": "#27272a",
+      },
       fontFamily: {
         'source-code': ['Source Code Pro', 'monospace'], // Menambahkan font
+        'inter': ['Inter', 'sans-serif'],
       },
     },
   },

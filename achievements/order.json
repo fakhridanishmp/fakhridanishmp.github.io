@@ -1,0 +1,22 @@
+[
+  {
+    "category": "1st Place & Top Honors",
+    "files": ["bepro-2025.json", "lkttg-2025.json"]
+  },
+  {
+    "category": "2nd Place",
+    "files": ["bepro-2024.json"]
+  },
+  {
+    "category": "3rd Place",
+    "files": ["inspire-2024.json"]
+  },
+  {
+    "category": "Finalists & Semi-Finalists",
+    "files": ["electra-14-semifinalist.json"]
+  },
+  {
+    "category": "Participation & Registry",
+    "files": ["participation-registry.json"]
+  }
+]
