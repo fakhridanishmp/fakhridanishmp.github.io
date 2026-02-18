@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Menu, X, Mail, Github, Instagram, Award, Code, Lightbulb, Download, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
+import fs from 'fs';
+import path from 'path';
 
-export default function Portfolio() {
+export default function Portfolio({ categorizedAchievements }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [projectGallery, setProjectGallery] = useState({});
-  const [achievementGallery, setAchievementGallery] = useState({});
 
   const projects = [
     {
@@ -37,85 +38,71 @@ export default function Portfolio() {
     }
   ];
 
-  const achievements = [
-    {
-      title: "BEPRO - Biomedical Engineering Annual Contest",
-      subtitle: "1st Place & Favorite Award | 2025",
-      organizer: "Institut Teknologi Sepuluh Nopember (FTEIC, BME)",
-      project: "Multi-Analysis Medical Device",
-      description: "Awarded 1st place for developing a child-friendly medical device integrating non-invasive glucose monitoring and cuffless blood pressure measurement with machine learning. The device addresses Indonesia's high prevalence of diabetes and hypertension and targets early detection to prevent IUGR and SGA outcomes <i>(<a href='http://dx.doi.org/10.14238/sp20.6.2019.392-400' target='_blank'>Handayani et al., 2019</a>)</i>, <i>(<a href='http://www.who.int/news/item/09-09-2019-51-3-million-indonesians-affected-by-hypertension' target='_blank'>WHO 2019</a>)</i>, <i>(<a href='https://idf.org' target='_blank'>IDF</a>)</i>.",
-      images: ["/photos/1st_champ_2025.jpg"]
-    },
-    {
-      title: "Biomedical Engineering Annual Contest - Bepro",
-      subtitle: "2nd Place | 2024",
-      organizer: "Institut Teknologi Sepuluh Nopember (FTEIC, BME)",
-      project: "Non-Invasive Glucometer with Machine Learning",
-      description: "Recognized for creating a non-invasive glucometer that reduces fear of needles, addresses high undiagnosed diabetes rates, and supports early maternal health interventions to prevent IUGR and SGA outcomes <i>(<a href='https://pbperkeni.or.id/' target='_blank'>PB PERKENI</a>)</i>, <i>(<a href='https://doi.org/10.1186/s12916-025-03990-7' target='_blank'>2025 study</a>)</i>, <i>(<a href='https://doi.org/10.3390/medicina59061139' target='_blank'>2023 study</a>)</i>.",
-      images: ["/photos/2nd_champ_2024.jpg"]
-    },
-    {
-      title: "Inspire - KRPY X UGM",
-      subtitle: "3rd Place | 2024",
-      organizer: "Taman Pintar Yogyakarta & Universitas Gajah Mada",
-      project: "Non-Invasive Glucometer with Machine Learning",
-      description: "Placed 3rd for designing a system predicting stunting risk in infants by analyzing maternal glucose and blood pressure metrics, facilitating early intervention for high-risk pregnancies <i>(<a href='https://pbperkeni.or.id/' target='_blank'>PB PERKENI</a>)</i>, <i>(<a href='https://doi.org/10.1186/s12916-025-03990-7' target='_blank'>2025 study</a>)</i>.",
-      images: ["/projects/project1.png"]
-    },
-    {
-      title: "BEPRO - Biomedical Engineering Annual Contest",
-      subtitle: "Favourite Champion | 2025",
-      organizer: "Institut Teknologi Sepuluh Nopember (FTEIC, BME)",
-      project: "Multi-Analysis Medical Device",
-      description: "Recognized as favourite champion for the innovative device combining non-invasive glucose and cuffless blood pressure monitoring, leveraging machine learning to improve pediatric health management <i>(<a href='http://dx.doi.org/10.14238/sp20.6.2019.392-400' target='_blank'>Handayani et al., 2019</a>)</i>, <i>(<a href='https://idf.org' target='_blank'>IDF</a>)</i>.",
-      images: ["/photos/fav_champ_2025.jpg"]
-    },
-    {
-      title: "Biomedical Engineering Annual Contest - Bepro",
-      subtitle: "Favourite Champion | 2024",
-      organizer: "Institut Teknologi Sepuluh Nopember (FTEIC, BME)",
-      project: "Non-Invasive Glucometer with Machine Learning",
-      description: "Acknowledged for a project improving maternal and infant health by monitoring blood pressure and glucose without needles, supporting early detection and intervention to reduce stunting risks <i>(<a href='https://pbperkeni.or.id/' target='_blank'>PB PERKENI</a>)</i>, <i>(<a href='https://doi.org/10.3390/medicina59061139' target='_blank'>2023 study</a>)</i>.",
-      images: ["/projects/project2.png"]
-    },
-    {
-      title: "Deployed IoT Attendance System",
-      subtitle: "SMA Negeri 1 Waru | 2025",
-      organizer: "Actively used by students and teachers",
-      project: "RFID-Based Presence System",
-      description: "Developed a practical IoT solution to automate attendance using RFID technology, simplifying management of classroom presence.",
-      images: ["/projects/project3.png"]
+  const renderAchievementItem = (item) => {
+    if (item.event && item.rank && item.project) {
+      return (
+        <div className="bg-[#0d1117] p-4 border border-blue-500/30 group hover:border-blue-500/60 transition-colors rounded-lg font-mono">
+          <div className="flex items-center gap-2 mb-2">
+            <div className={`w-2 h-2 rounded-full ${item.rank.includes('1st') ? 'bg-red-500' : 'bg-blue-500'}`}></div>
+            <span className="text-[10px] text-slate-400">
+              {item.award ? `ACHIEVEMENT_LOG_${item.award}.json` : (item.event ? `ACHIEVEMENT_LOG_${item.event.split(' ')[0]}_2025.json` : 'ACHIEVEMENT_LOG_2025.json')}
+            </span>
+          </div>
+          <pre className="text-xs leading-relaxed overflow-x-auto text-slate-300">
+            <span className="text-red-400 font-bold">{'{'}</span>
+            <br />
+            <span className="text-blue-300">  &quot;event&quot;</span>: <span className="text-white">&quot;{item.event}&quot;</span>,
+            <br />
+            <span className="text-blue-300">  &quot;rank&quot;</span>: <span className="text-white">&quot;{item.rank}&quot;</span>,
+            {item.recognition && <><br /><span className="text-blue-300">  &quot;recognition&quot;</span>: <span className="text-white">&quot;{item.recognition}&quot;</span>,</>}
+            {item.location && <><br /><span className="text-blue-300">  &quot;location&quot;</span>: <span className="text-white">&quot;{item.location}&quot;</span>,</>}
+            {item.benefit && <><br /><span className="text-blue-300">  &quot;benefit&quot;</span>: <span className="text-white">&quot;{item.benefit}&quot;</span>,</>}
+            <br />
+            <span className="text-blue-300">  &quot;project&quot;</span>: <span className="text-white">&quot;{item.project}&quot;</span>
+            <br />
+            <span className="text-red-400 font-bold">{'}'}</span>
+          </pre>
+        </div>
+      );
+    } else if (item.award) {
+      return (
+        <div className="p-3 bg-slate-900 border border-slate-800 rounded-lg flex items-center justify-between">
+          <p className="text-[10px] font-mono text-slate-400">{"//"} Award_Registry: [{item.award}]</p>
+          <span className="text-[10px] font-mono text-slate-500">{item.version}</span>
+        </div>
+      );
+    } else if (item.log) {
+      return (
+        <div className="p-3 bg-slate-900 border border-slate-800 rounded-lg flex items-center justify-between">
+          <p className="text-[10px] font-mono text-slate-400">{"//"} Finalist_Log: {item.log}</p>
+          <span className="text-[10px] font-mono text-yellow-500/50">{item.status}</span>
+        </div>
+      );
+    } else if (item.batch_process) {
+      return (
+        <div className="bg-[#0d1117] p-4 border border-slate-800 rounded-lg">
+          <div className="text-[10px] font-mono leading-relaxed text-slate-400">
+            &gt; {"//"} Batch_Process: [{item.batch_process.join(', ')}]<br />
+            &gt; Status: {item.status}
+          </div>
+        </div>
+      );
     }
-  ];
-
-
-
-  const nextImage = (index, type) => {
-    if (type === 'project') {
-      setProjectGallery(prev => ({
-        ...prev,
-        [index]: ((prev[index] || 0) + 1) % projects[index].images.length
-      }));
-    } else {
-      setAchievementGallery(prev => ({
-        ...prev,
-        [index]: ((prev[index] || 0) + 1) % achievements[index].images.length
-      }));
-    }
+    return null;
   };
 
-  const prevImage = (index, type) => {
-    if (type === 'project') {
-      setProjectGallery(prev => ({
-        ...prev,
-        [index]: ((prev[index] || 0) - 1 + projects[index].images.length) % projects[index].images.length
-      }));
-    } else {
-      setAchievementGallery(prev => ({
-        ...prev,
-        [index]: ((prev[index] || 0) - 1 + achievements[index].images.length) % achievements[index].images.length
-      }));
-    }
+  const nextImage = (index) => {
+    setProjectGallery(prev => ({
+      ...prev,
+      [index]: ((prev[index] || 0) + 1) % projects[index].images.length
+    }));
+  };
+
+  const prevImage = (index) => {
+    setProjectGallery(prev => ({
+      ...prev,
+      [index]: ((prev[index] || 0) - 1 + projects[index].images.length) % projects[index].images.length
+    }));
   };
 
   return (
@@ -288,14 +275,14 @@ export default function Portfolio() {
                   {project.images.length > 1 && (
                     <>
                       <button
-                        onClick={() => prevImage(index, 'project')}
+                        onClick={() => prevImage(index)}
                         className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white"
                         style={{ color: '#02027f' }}
                       >
                         <ChevronLeft size={20} />
                       </button>
                       <button
-                        onClick={() => nextImage(index, 'project')}
+                        onClick={() => nextImage(index)}
                         className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white"
                         style={{ color: '#02027f' }}
                       >
@@ -342,102 +329,39 @@ export default function Portfolio() {
       </section>
 
       {/* Achievements Section */}
-      <section id="achievements" className="min-h-screen py-20 px-6 bg-white">
+      <section id="achievements" className="min-h-screen py-20 px-6 bg-background-dark text-white overflow-hidden">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#02027f' }}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
               ACHIEVEMENTS
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-[#d41213] to-[#02027f] mx-auto mb-4"></div>
-            <p className="text-gray-600 text-lg">
-              A few highlights of awards and recognitions I&#39;tve received along my project journey.
+            <p className="text-slate-400 text-lg">
+              A few highlights of awards and recognitions I&#39;ve received along my project journey.
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8">
-            {achievements.map((achievement, index) => (
-              <div
-                key={index}
-                className="w-full md:w-[48%] lg:w-[31%] bg-gray-50 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col"
-              >
-                {/* Image Gallery */}
-                <div className="relative bg-gray-200 group aspect-[16/9]">
-                  <Image
-                    src={achievement.images[achievementGallery[index] || 0]}
-                    alt={achievement.title}
-                    fill
-                    quality={70}
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 1200px"
-                  />
-
-                  {/* Gallery Navigation */}
-                  {achievement.images.length > 1 && (
-                    <>
-                      <button
-                        onClick={() => prevImage(index, 'achievement')}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white"
-                        style={{ color: '#02027f' }}
-                      >
-                        <ChevronLeft size={20} />
-                      </button>
-                      <button
-                        onClick={() => nextImage(index, 'achievement')}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white"
-                        style={{ color: '#02027f' }}
-                      >
-                        <ChevronRight size={20} />
-                      </button>
-
-                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
-                        {achievement.images.map((_, imgIdx) => (
-                          <div
-                            key={imgIdx}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${imgIdx === (achievementGallery[index] || 0) ? 'w-6' : ''
-                              }`}
-                            style={{
-                              backgroundColor: imgIdx === (achievementGallery[index] || 0) ? '#d41213' : '#ffffff80'
-                            }}
-                          />
-                        ))}
-                      </div>
-                    </>
-                  )}
-
-                  {/* Award Badge */}
-                  <div
-                    className="absolute top-3 right-3 bg-white rounded-full p-2 shadow-lg"
-                  >
-                    <Award size={24} style={{ color: '#d41213' }} />
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold mb-1" style={{ color: '#02027f' }}>
-                    {achievement.title}
+          <div className="grid grid-cols-1 gap-12">
+            <div className="space-y-10">
+              {categorizedAchievements.map((group, groupIdx) => (
+                <div key={groupIdx} className="relative pl-8 pb-4 border-l-2 border-slate-800">
+                  <div className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full border-4 border-background-dark ${
+                    groupIdx === 0 ? 'bg-blue-600' : 'bg-slate-700'
+                  }`}></div>
+                  <h3 className="text-xs font-mono uppercase tracking-widest mb-6 font-bold text-slate-400">
+                    {group.category}
                   </h3>
-                  <p className="text-sm font-semibold mb-3" style={{ color: '#d41213' }}>
-                    {achievement.subtitle}
-                  </p>
-
-                  <div className="text-sm space-y-2">
-                    <p className="text-gray-600">
-                      <span className="font-semibold" style={{ color: '#02027f' }}>Organizer:</span> {achievement.organizer}
-                    </p>
-                    <p className="text-gray-600">
-                      <span className="font-semibold" style={{ color: '#02027f' }}>Project:</span> {achievement.project}
-                    </p>
-                    <p
-                      className="text-gray-700 leading-relaxed mt-3"
-                      dangerouslySetInnerHTML={{ __html: achievement.description }}
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {group.items.map((item, itemIdx) => (
+                      <div key={itemIdx} className={group.items.length === 1 && group.category.includes('1st') ? 'md:col-span-2' : ''}>
+                        {renderAchievementItem(item)}
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-
         </div>
       </section>
 
@@ -500,4 +424,27 @@ export default function Portfolio() {
       </footer>
     </div>
   );
+}
+export async function getStaticProps() {
+  const achievementsDir = path.join(process.cwd(), 'achievements');
+  const orderFile = path.join(achievementsDir, 'order.json');
+  const order = JSON.parse(fs.readFileSync(orderFile, 'utf8'));
+
+  const categorizedAchievements = order.map(category => {
+    const items = category.files.map(filename => {
+      const filePath = path.join(achievementsDir, filename);
+      const content = fs.readFileSync(filePath, 'utf8');
+      return JSON.parse(content);
+    });
+    return {
+      category: category.category,
+      items
+    };
+  });
+
+  return {
+    props: {
+      categorizedAchievements
+    }
+  };
 }

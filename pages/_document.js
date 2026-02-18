@@ -9,6 +9,10 @@ export default function Document() {
         <meta name="description" content="I'm a student at SMA Negeri 1 Waru with a passion for creating IoT-based solutions using data science, electrical engineering, and smart system development." />
         <meta charSet="utf-8" />
         <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet"
+        />
+        <link
           href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap"
           rel="stylesheet"
         />
