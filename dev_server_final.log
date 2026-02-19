@@ -1,0 +1,14 @@
+
+> fakhridanishmp.github.io@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.0.3
+   - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 1868ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3.5s (342 modules)
+ ✓ Compiled in 242ms (342 modules)
+Warning: <title> should not be used in _document.js's <Head>. https://nextjs.org/docs/messages/no-document-title
+ GET / 200 in 3993ms
