@@ -102,26 +102,28 @@
 <body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
     
     <!-- TopNavBar -->
-    <header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-margin py-4 max-w-7xl mx-auto bg-surface/95 backdrop-blur-sm border-b border-outline-variant">
-        <div class="font-code-label text-code-label font-semibold tracking-tight text-on-surface">FAKHRIDANISH MIRZA</div>
-        <nav class="hidden md:flex gap-6 items-center">
-            <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#about">About</a>
-            <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#research">Research</a>
-            <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#awards">Awards</a>
-            <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#skills">Skills</a>
-            <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#experience">Experience</a>
-        </nav>
-        <a class="hidden md:inline-flex items-center justify-center px-6 py-2 bg-primary-container text-on-primary-container font-code-label text-code-label transition-all hover:bg-tertiary" href="#">
-            Contact
-        </a>
-        <button class="md:hidden text-on-surface-variant hover:text-primary transition-colors" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
+    <header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-sm border-b border-outline-variant">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-container-margin py-4">
+            <div class="font-code-label text-code-label font-semibold tracking-tight text-on-surface">FAKHRIDANISH MIRZA</div>
+            <nav class="hidden md:flex gap-6 items-center">
+                <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#about">About</a>
+                <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#research">Research</a>
+                <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#awards">Awards</a>
+                <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#skills">Skills</a>
+                <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#experience">Experience</a>
+            </nav>
+            <a class="hidden md:inline-flex items-center justify-center px-6 py-2 bg-primary-container text-on-primary-container font-code-label text-code-label transition-all hover:bg-tertiary" href="#">
+                Contact
+            </a>
+            <button class="md:hidden text-on-surface-variant hover:text-primary transition-colors" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
     </header>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden fixed top-[80px] left-0 right-0 bg-surface/95 backdrop-blur-sm border-b border-outline-variant z-40 md:hidden">
-        <nav class="flex flex-col p-4 gap-4">
+    <div id="mobile-menu" class="hidden fixed top-[73px] left-0 right-0 bg-surface/95 backdrop-blur-sm border-b border-outline-variant z-40 md:hidden">
+        <nav class="max-w-7xl mx-auto flex flex-col p-4 gap-4">
             <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#about" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
             <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#research" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Research</a>
             <a class="text-on-surface-variant font-code-label text-code-label hover:text-primary transition-colors duration-200" href="#awards" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Awards</a>
