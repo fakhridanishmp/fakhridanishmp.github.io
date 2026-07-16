@@ -1,5 +1,4 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "outputDirectory": "."
+  "version": 2,
+  "public": true
 }
